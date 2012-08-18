@@ -66,9 +66,6 @@ set hlsearch
 "highlight Search ctermfg=Black ctermbg=Red cterm=NONE
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" tag complete
-map <C-C> <C-P>_
-
 " Haskell
 let g:haddock_browser = 1
 let hs_highlight_delimiters = 1
