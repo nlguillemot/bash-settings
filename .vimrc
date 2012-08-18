@@ -7,30 +7,6 @@ filetype on
 filetype plugin indent on
 set bs=2
 
-" Colours
-let g:EasyColourCustomColours = 1
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-" Pathogen
-"
-call pathogen#infect()
-
-"  
-if has("gui_running")
-  set guifont=GohuFont\ 7
-  set t_Co=256
-  set background=dark
-  colorscheme bandit256
-else
-  set t_Co=256
-  colorscheme bandit256
-  set background=dark
-endif
-
 " Automatically fix line length
 "
 map <C-M> <S-J><S-V>gq
@@ -41,9 +17,8 @@ set nosmartindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
 
-" Sorry vimmers, it's just plain nice to beable to 
+" Sorry vimmers, it's just plain nice to beable to
 " sit back and scroll with the mouse.
 set mouse=a
 
@@ -73,31 +48,20 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let asmsyntax='armasm'
 let filetype_inc='armasm'
 
-" Auto Load jinja2 Syntax
-"
-autocmd FileType htmljinja set noexpandtab
-
-
 " Enable some better java hilighting
-" 
+"
 let java_highlight_all=1
 let java_highlight_functions=1
 
 " Enable full Python highlighting
-" 
+"
 let python_highlight_exceptions = 1
 let python_highlight_builtin_funcs = 1
 let python_highlight_builtin_objs = 1
 let python_slow_sync=1
 let python_highlight_all=1
 
-" C++ settings
-"
-autocmd FileType h setlocal noexpandtab
-autocmd FileType cpp setlocal noexpandtab
-autocmd FileType c setlocal noexpandtab
-
-" Search hilighting.  <Space> clears the highlight
+" Search hilighting. <Space> clears the highlight
 set hlsearch
 "highlight Search ctermfg=Black ctermbg=Red cterm=NONE
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -126,7 +90,7 @@ autocmd InsertEnter * set number
 autocmd InsertLeave * set relativenumber
 
 
-hi CursorLine   cterm=NONE ctermbg=17 
+hi CursorLine cterm=NONE ctermbg=17
 hi CursorColumn cterm=NONE ctermbg=17
 set cursorline!
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
