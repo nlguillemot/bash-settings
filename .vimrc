@@ -18,10 +18,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-" Sorry vimmers, it's just plain nice to beable to
-" sit back and scroll with the mouse.
-set mouse=a
-
 "" Easier split navigation
 "
 map <C-J> <C-W>j<C-W>_ :set relativenumber<Return>
