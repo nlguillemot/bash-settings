@@ -63,7 +63,7 @@ set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " tag complete
-map <C-C> <C-P>_
+" map <C-C> <C-P>_
 
 " Haskell
 let g:haddock_browser = 1
