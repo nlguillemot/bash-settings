@@ -23,10 +23,10 @@ set softtabstop=4
 
 "" Easier split navigation
 "
-map <C-J> <C-W>j<C-W>_ :set relativenumber<Return>
-map <C-K> <C-W>k<C-W>_ :set relativenumber<Return>
-map <C-H> <C-W>h<C-W>_ :set relativenumber<Return>
-map <C-L> <C-W>l<C-W>_ :set relativenumber<Return>
+" map <C-J> <C-W>j<C-W>_ :set relativenumber<Return>
+" map <C-K> <C-W>k<C-W>_ :set relativenumber<Return>
+" map <C-H> <C-W>h<C-W>_ :set relativenumber<Return>
+" map <C-L> <C-W>l<C-W>_ :set relativenumber<Return>
 
 " Easy Tab Navigation
 map <C-P> :tabp<Return>
