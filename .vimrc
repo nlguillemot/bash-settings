@@ -4,7 +4,7 @@ syntax on
 
 
 filetype on
-filetype plugin indent on
+" filetype plugin indent on
 set bs=2
 
 " Automatically fix line length
@@ -18,12 +18,14 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+set number
+
 "" Easier split navigation
 "
-map <C-J> <C-W>j<C-W>_ :set relativenumber<Return>
-map <C-K> <C-W>k<C-W>_ :set relativenumber<Return>
-map <C-H> <C-W>h<C-W>_ :set relativenumber<Return>
-map <C-L> <C-W>l<C-W>_ :set relativenumber<Return>
+" map <C-J> <C-W>j<C-W>_ :set relativenumber<Return>
+" map <C-K> <C-W>k<C-W>_ :set relativenumber<Return>
+" map <C-H> <C-W>h<C-W>_ :set relativenumber<Return>
+" map <C-L> <C-W>l<C-W>_ :set relativenumber<Return>
 
 " Easy Tab Navigation
 map <C-P> :tabp<Return>
@@ -78,12 +80,12 @@ function! NumberToggle()
     endif
 endfunc
 
-nnoremap <C-B> :call NumberToggle()<cr>
-set relativenumber
-au FocusLost * set number
-au FocusGained * set relativenumber
-autocmd InsertEnter * set number
-autocmd InsertLeave * set relativenumber
+" nnoremap <C-B> :call NumberToggle()<cr>
+" set relativenumber
+" au FocusLost * set number
+" au FocusGained * set relativenumber
+" autocmd InsertEnter * set number
+" autocmd InsertLeave * set relativenumber
 
 
 hi CursorLine cterm=NONE ctermbg=17
