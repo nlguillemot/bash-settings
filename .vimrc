@@ -75,13 +75,13 @@ let g:haddock_browser = 1
 let hs_highlight_delimiters = 1
 
 " Relative line settings
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
+" function! NumberToggle()
+    " if(&relativenumber == 1)
+        " set number
+    " else
+        " set relativenumber
+    " endif
+" endfunc
 
 " nnoremap <C-B> :call NumberToggle()<cr>
 " set relativenumber
