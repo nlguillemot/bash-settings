@@ -7,6 +7,9 @@ filetype on
 " filetype plugin indent on
 set bs=2
 
+" Disable automatic single line comment continuation
+au FileType c,cpp setlocal comments-=:// comments+=f://
+
 " Automatically fix line length
 "
 map <C-M> <S-J><S-V>gq
