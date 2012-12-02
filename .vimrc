@@ -4,8 +4,13 @@ syntax on
 
 set bs=2
 
-autocmd FileType *      set formatoptions=tcql nocindent comments&
-autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,ex:*/,://
+autocmd FileType *      set formatoptions=tcql nocindent noexpandtab comments&
+autocmd FileType c,cpp  set formatoptions=croql cindent expandtab comments=sr:/*,mb:*,ex:*/
+
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd BufRead *.py set nocindent expandtab
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+filetype plugin indent on
 
 set autoindent
 set autowrite
@@ -17,7 +22,6 @@ set hlsearch
 set incsearch
 nnoremap <silent> <Space> :nohlsearch<bar>:echo<CR>
 
-set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
