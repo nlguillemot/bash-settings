@@ -5,7 +5,7 @@ syntax on
 set bs=2
 
 autocmd FileType *      set formatoptions=tcql nocindent comments&
-autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,ex:*/,://
+autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,ex:*/
 
 set autoindent
 set autowrite
