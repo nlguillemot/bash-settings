@@ -2,47 +2,31 @@
 set nocompatible
 syntax on
 
-
-filetype on
-" filetype plugin indent on
 set bs=2
 
-" Disable automatic single line comment continuation
-au FileType c,cpp setlocal comments-=:// comments+=f://
+autocmd FileType *      set formatoptions=tcql nocindent comments&
+autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,ex:*/,://
 
-" Automatically fix line length
-"
-map <C-M> <S-J><S-V>gq
+set autoindent
+set autowrite
 
-" Set tab options
-"
-set nosmartindent
+set sw=4
+set notextmode
+set notextauto
+set hlsearch
+set incsearch
+nnoremap <silent> <Space> :nohlsearch<bar>:echo<CR>
+
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
 set number
 
-"" Easier split navigation
-"
-" map <C-J> <C-W>j<C-W>_ :set relativenumber<Return>
-" map <C-K> <C-W>k<C-W>_ :set relativenumber<Return>
-" map <C-H> <C-W>h<C-W>_ :set relativenumber<Return>
-" map <C-L> <C-W>l<C-W>_ :set relativenumber<Return>
-
 " Easy Tab Navigation
 map <C-P> :tabp<Return>
 map <C-N> :tabn<Return>
-
-"" LatexStuff
-map <C-I> <Plug>IMAP_JumpForward
-let g:Imap_UsePlaceHolders = 0
-
-"" Some Commands to make NERDTree a bit nicer.
-"
-map <F2> :NERDTreeToggle<CR>
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Auto Load Arm Syntax
 "
@@ -62,36 +46,13 @@ let python_highlight_builtin_objs = 1
 let python_slow_sync=1
 let python_highlight_all=1
 
-" Search hilighting. <Space> clears the highlight
-set hlsearch
 "highlight Search ctermfg=Black ctermbg=Red cterm=NONE
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" tag complete
-" map <C-C> <C-P>_
+" nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Haskell
 let g:haddock_browser = 1
 let hs_highlight_delimiters = 1
 
-" Relative line settings
-" function! NumberToggle()
-    " if(&relativenumber == 1)
-        " set number
-    " else
-        " set relativenumber
-    " endif
-" endfunc
+set cursorline
 
-" nnoremap <C-B> :call NumberToggle()<cr>
-" set relativenumber
-" au FocusLost * set number
-" au FocusGained * set relativenumber
-" autocmd InsertEnter * set number
-" autocmd InsertLeave * set relativenumber
-
-
-hi CursorLine cterm=NONE ctermbg=17
-hi CursorColumn cterm=NONE ctermbg=17
-set cursorline!
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+map <Enter> o
