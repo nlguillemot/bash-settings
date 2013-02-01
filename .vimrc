@@ -12,6 +12,21 @@ autocmd BufRead *.py set nocindent expandtab
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 filetype plugin indent on
 
+filetype plugin on
+
+" This assumes that ghc is in your path, if it is not, or you
+" " wish to use a specific version of ghc, then please change
+" " the ghc below to a full path to the correct one
+au BufEnter *.hs compiler ghc
+"
+" " For this section both of these should be set to your
+" " browser and ghc of choice, I used the following
+" " two vim lines to get those paths:
+" " :r!which google-chrome
+" " :r!which ghc
+let g:haddock_browser = "/usr/bin/google-chrome"
+let g:ghc = "/usr/bin/ghc"
+
 set autoindent
 set autowrite
 
@@ -56,7 +71,5 @@ let python_highlight_all=1
 " Haskell
 let g:haddock_browser = 1
 let hs_highlight_delimiters = 1
-
-set cursorline
 
 map <Enter> o
