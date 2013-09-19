@@ -8,9 +8,12 @@ autocmd FileType *      set formatoptions=tcql nocindent noexpandtab comments&
 autocmd FileType c,cpp  set formatoptions=croql cindent expandtab comments=sr:/*,mb:*,ex:*/
 autocmd FileType d      set formatoptions=croql cindent expandtab
 
+autocmd FileType lua setlocal expandtab shiftwidth=4 tabstop=4
+
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd BufRead *.py set nocindent expandtab
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
+
 filetype plugin indent on
 
 filetype plugin on
